@@ -22,4 +22,7 @@ public class Images {
     @Column
     private String description;
 
+    @Column
+    private String type;
+
 }

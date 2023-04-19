@@ -21,16 +21,17 @@ public class Randonnee {
     private String nom;
 
     @Column
-    private LocalDate date;
-
-    @Column
     private Long distance;
 
     @Column
-    private Long denivele;
+    private Integer denivele;
 
     @Column
     private String description;
+
+    @Column
+    private Long duree;
+
 
     @OneToMany
     @JoinTable(name = "images_randonnee",
@@ -38,7 +39,7 @@ public class Randonnee {
             inverseJoinColumns = @JoinColumn(name = "image_id"))
     private Set<Images> images = new HashSet<>();
 
-//
-//    @ManyToOne
-//    private Region region;
+
+    @ManyToOne
+    private Region region;
 }
